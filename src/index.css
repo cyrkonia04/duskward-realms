@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gothic-bg text-gothic-parchment font-body;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- MIST PIERCING TEXT GLOW --- */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading text-gothic-gold;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(138, 110, 99, 0.4); 
+}
