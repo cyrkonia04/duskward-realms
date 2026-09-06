@@ -1,10 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./index.css",
-    "./src/**/*.{js,ts,jsx,tsx,js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       fontFamily: {
@@ -20,13 +16,12 @@ export default {
           amber: '#8a6e4b',
           bronze: '#b8946a',
           purple: '#4a3b5c',
-        }
+        },
       },
       backgroundImage: {
-        'parchment': "url('images/parchment-texture.jpg')",
-        'mist': "url('images/misty-forest.jpg')",
-      }
+        mist: "url('/images/misty-forest.jpg')",
+      },
     },
   },
   plugins: [],
-} 
+};

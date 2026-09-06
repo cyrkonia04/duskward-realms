@@ -1,37 +1,60 @@
-import { useEffect, useRef } from 'react'; // Added useEffect, useRef
-import { useLocation } from 'react-router-dom'; // Needed to know the current URL
+import { useEffect, useRef } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { useRegion } from '../context/RegionContext';
 
-export default function Layout({ children }) {
+export default function Layout() {
   const location = useLocation();
-  const mistRef = useRef(null); // ADVANCED: Ref for the background image
+  const mistRef = useRef(null);
+  const { setActiveRegion } = useRegion();
 
-  // SIDE EFFECTS: Run every time the URL changes
+  // SIDE EFFECT: runs on every route change
   useEffect(() => {
-    // 1. Update Browser Tab Title dynamically based on route
     const titles = {
       '/': 'Duskward Realms',
       '/world': 'The World',
       '/regions': 'Regions',
-      '/bestiary': 'Bestiary'
+      '/bestiary': 'Bestiary',
     };
     document.title = titles[location.pathname] || 'Duskward Realms';
-    
-    // 2. Scroll to top smoothly when changing pages
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [location.pathname]);
+
+    // CENTRALIZED: derive the region from the path ("/world" -> "World").
+    // Every future page updates the Footer with zero extra wiring.
+    const region =
+      location.pathname === '/'
+        ? 'Home'
+        : location.pathname.slice(1).replace(/^./, (c) => c.toUpperCase());
+    setActiveRegion(region);
+
+    // Instant scroll feels snappier for navigation than smooth
+    window.scrollTo(0, 0);
+  }, [location.pathname, setActiveRegion]);
+
+  // SIDE EFFECT: gentle parallax drift on the mist (mount only)
+  useEffect(() => {
+    const onScroll = () => {
+      if (mistRef.current) {
+        mistRef.current.style.transform = `translateY(${window.scrollY * 0.1}px)`;
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      {/* ADVANCED: useRef applied to the background div */}
-      <div ref={mistRef} className="fixed inset-0 -z-20 bg-[url('images/misty-forest.jpg')] bg-cover bg-center bg-no-repeat opacity-30"></div>
+      {/* Taller than the viewport + negative top so the parallax shift never reveals a gap */}
+      <div
+        ref={mistRef}
+        className="fixed -z-20 -top-24 left-0 h-[calc(100%+12rem)] w-full bg-mist bg-cover bg-center bg-no-repeat opacity-30"
+      />
 
       <Navbar />
 
       <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 min-h-[85vh]">
         <div className="relative z-10">
-          {children}
+          <Outlet />
         </div>
       </main>
 

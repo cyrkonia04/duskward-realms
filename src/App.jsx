@@ -1,17 +1,25 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from './context/ThemeContext';
+import { RegionProvider } from './context/RegionContext';
 import Layout from './components/Layout';
 import Home from './pages/Home';
+import World from './pages/World';
+import Regions from './pages/Regions';
+import Bestiary from './pages/Bestiary';
 
 function App() {
   return (
-    <ThemeProvider>
+    <RegionProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout><Home /></Layout>} />
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/world" element={<World />} />
+            <Route path="/regions" element={<Regions />} />
+            <Route path="/bestiary" element={<Bestiary />} />
+          </Route>
         </Routes>
       </BrowserRouter>
-    </ThemeProvider>
+    </RegionProvider>
   );
 }
 

@@ -1,14 +1,12 @@
-import React, { memo } from 'react'; // PERFORMANCE: React.memo
-import { useTheme } from '../context/ThemeContext'; // CONTEXT: Read global state
+import { useRegion } from '../context/RegionContext';
 
-// PERFORMANCE: Wrapped in memo. This component will NEVER re-render unless its specific props/context change.
-export default memo(function Footer() {
-  const { activeRegion } = useTheme(); // CONTEXT: Read global state
+export default function Footer() {
+  const { activeRegion } = useRegion();
 
-  // DYNAMIC CONTENT: Changes based on what page the user is on
-  const dynamicText = activeRegion === 'Home' 
-    ? "The story is always growing..." 
-    : `Currently exploring: ${activeRegion}`;
+  const dynamicText =
+    activeRegion === 'Home'
+      ? 'The story is always growing...'
+      : `Currently exploring: ${activeRegion}`;
 
   return (
     <footer className="relative z-10 border-t border-gothic-gold/20 mt-16">
@@ -17,7 +15,7 @@ export default memo(function Footer() {
           "{dynamicText}"
         </p>
         <p className="font-body text-gothic-parchment/50 text-xs mt-2">
-          Last updated: October 2023
+          Last updated: September 2026
         </p>
         <p className="font-body text-gothic-parchment/30 text-xs mt-4">
           Woven by Cyrko
@@ -25,4 +23,4 @@ export default memo(function Footer() {
       </div>
     </footer>
   );
-});
+}
