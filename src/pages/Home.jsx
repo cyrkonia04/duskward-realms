@@ -9,7 +9,7 @@ const exploreData = [
 
 export default function Home() {
   return (
-    <div className="pt-8">
+    <div className="pt-4 sm:pt-8">
         <h1 className="text-[2.1rem] sm:text-4xl md:text-5xl text-balance text-center mb-6 leading-tight w-full">
           Welcome, traveler, to the <span className="text-gothic-purple">Duskward Realms</span> ✦
         </h1>
