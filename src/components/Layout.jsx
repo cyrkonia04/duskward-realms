@@ -53,7 +53,7 @@ export default function Layout() {
 
       <Navbar />
 
-      <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-12 sm:pt-12 min-h-[85vh]">
+      <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12 min-h-[85vh]">
         <div className="relative z-10">
           <Outlet />
         </div>
