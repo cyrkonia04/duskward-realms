@@ -44,11 +44,12 @@ export default function Layout() {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      {/* Taller than the viewport + negative top so the parallax shift never reveals a gap */}
-      <div
-        ref={mistRef}
-        className="fixed -z-20 -top-24 left-0 h-[calc(100%+12rem)] w-full bg-mist bg-cover bg-center bg-no-repeat opacity-30"
-      />
+    {/* FOREST-MIST: height is locked to the LARGE viewport (100lvh), which does NOT
+        change when the browser URL bar hides/shows. Extra height + negative top give the parallax headroom. */}
+    <div
+      ref={mistRef}
+      className="fixed -z-20 -top-48 left-0 h-[calc(100lvh_+_24rem)] w-full bg-mist bg-cover bg-center bg-no-repeat opacity-30 will-change-transform"
+    />
 
       <Navbar />
 
