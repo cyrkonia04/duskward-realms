@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import NavbarSearch from './NavbarSearch';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -23,8 +24,7 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-gothic-bg/90 backdrop-blur-md border-b border-gothic-gold/30 shadow-lg shadow-black/20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* LEFT: Logo — now visible on mobile too, just smaller */}
+        <div className="flex items-center justify-between h-16 gap-4">
           <Link
             to="/"
             className="flex-shrink-0 flex items-center gap-2 font-heading text-xl sm:text-2xl text-gothic-gold tracking-wider"
@@ -33,43 +33,45 @@ export default function Navbar() {
             <span>Duskward Realms</span>
           </Link>
 
-          {/* CENTER: Desktop links */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <NavLink
-                key={link.name}
-                to={link.path}
-                end={link.path === '/'}
-                className={desktopLinkClass}
-              >
+              <NavLink key={link.name} to={link.path} end={link.path === '/'} className={desktopLinkClass}>
                 {link.name}
               </NavLink>
             ))}
           </div>
 
-          {/* RIGHT: Hamburger */}
-          <button
-            className="md:hidden text-gothic-gold focus:outline-none"
-            onClick={toggleMenu}
-            aria-expanded={isMenuOpen}
-            aria-label="Toggle navigation"
-          >
-            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d={isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16'}
-              />
-            </svg>
-          </button>
+          <div className="flex items-center gap-4">
+            {/* DESKTOP SEARCH: grows slightly on focus */}
+            <div className="hidden md:block">
+              <NavbarSearch inputClassName="w-44 focus:w-60" />
+            </div>
+
+            <button
+              className="md:hidden text-gothic-gold focus:outline-none"
+              onClick={toggleMenu}
+              aria-expanded={isMenuOpen}
+              aria-label="Toggle navigation"
+            >
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d={isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16'}
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile menu: full-width sibling of the bar, SAME surface + blur,
-          so it reads as one continuous piece of UI */}
+      {/* MOBILE MENU: search lives at the top */}
       {isMenuOpen && (
         <div className="md:hidden bg-gothic-bg/95 backdrop-blur-md border-t border-gothic-gold/30 shadow-lg shadow-black/20">
+          <div className="px-4 pt-3 pb-3 border-b border-gothic-gold/10">
+            <NavbarSearch inputClassName="w-full" onNavigate={() => setIsMenuOpen(false)} />
+          </div>
           {navLinks.map((link) => (
             <NavLink
               key={link.name}

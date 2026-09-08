@@ -15,3 +15,38 @@ h1, h2, h3, h4, h5, h6 {
   @apply font-heading text-gothic-gold;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(138, 110, 99, 0.4); 
 }
+
+html {
+  scroll-behavior: smooth;
+  /* Firefox: thin bar, bronze thumb on bg track */
+  scrollbar-width: thin;
+  scrollbar-color: #8a6e4b #1a1410;
+}
+
+/* WebKit (Chrome, Safari, Edge): same scheme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1410;
+}
+::-webkit-scrollbar-thumb {
+  background: #8a6e4b;
+  border-radius: 8px;
+  border: 2px solid #1a1410; /* inset look — thumb floats inside the track */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c4a87a;
+}
+
+/* UTILITY: hide the bar but keep the scroll (used by SecondaryNav, future carousels) */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

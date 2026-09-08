@@ -10,9 +10,9 @@ const exploreData = [
 export default function Home() {
   return (
     <div className="pt-4 sm:pt-8">
-        <h1 className="text-[2.1rem] sm:text-4xl md:text-5xl text-balance text-center mb-6 leading-tight w-full">
-          Welcome, traveler, to the <span className="text-gothic-purple">Duskward Realms</span> ✦
-        </h1>
+       <h1 className="text-[2.1rem] sm:text-4xl md:text-5xl text-balance text-center mb-6 leading-tight w-full">
+  Welcome, traveler, to the <span className="text-gothic-purple">Duskward Realms</span> ✦
+</h1>
 
       {/* INTRO COLUMN — closes here now, before the cards */}
       <div className="max-w-3xl mx-auto space-y-6 font-body text-gothic-parchment/90 leading-relaxed text-lg">
