@@ -1,4 +1,4 @@
-import { allPeoples } from './peoples';
+import { allPeoples } from '@/data/world/peoples';
 
 export const searchIndex = [
   { name: 'Home', hint: 'Page', to: '/' },

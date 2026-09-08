@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import PageHeader from '../components/PageHeader';
-import Breadcrumb from '../components/Breadcrumb';
-import { festivals } from '../data/calendar';
+import PageHeader from '@/components/ui/PageHeader';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import { festivals } from '@/data/world/calendar';
 
 export default function Calendar() {
   return (

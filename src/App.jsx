@@ -1,16 +1,16 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ErrorBoundary from './components/ErrorBoundary';
-import { RegionProvider } from './context/RegionContext';
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import World from './pages/World';
-import RacesHub from './pages/RacesHub';
-import RaceDetail from './pages/RaceDetail';
-import Magic from './pages/Magic';
-import History from './pages/History';
-import Calendar from './pages/Calendar';
-import Regions from './pages/Regions';
-import Bestiary from './pages/Bestiary';
+import ErrorBoundary from '@/components/layout/ErrorBoundary';
+import { RegionProvider } from '@/context/RegionContext';
+import Layout from '@/components/layout/Layout';
+import Home from '@/pages/Home';
+import World from '@/pages/world/World';
+import RacesHub from '@/pages/world/races/RacesHub';
+import RaceDetail from '@/pages/world/races/RaceDetail';
+import Magic from '@/pages/world/Magic';
+import History from '@/pages/world/History';
+import Calendar from '@/pages/world/Calendar';
+import Regions from '@/pages/regions/Regions';
+import Bestiary from '@/pages/bestiary/Bestiary';
 
 function App() {
   return (

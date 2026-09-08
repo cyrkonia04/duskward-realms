@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import PageHeader from '../components/PageHeader';
-import Breadcrumb from '../components/Breadcrumb';
-import LoreTable from '../components/LoreTable';
-import { magicLede, magicSources, magicPractices, unbreakableRules } from '../data/magic';
+import PageHeader from '@/components/ui/PageHeader';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import LoreTable from '@/components/ui/LoreTable';
+import { magicLede, magicSources, magicPractices, unbreakableRules } from '@/data/world/magic';
 
 export default function Magic() {
   return (

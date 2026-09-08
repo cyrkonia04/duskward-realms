@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { searchIndex } from '../data/searchIndex';
+import { searchIndex } from '@/data/searchIndex';
 
 // Fold diacritics + lowercase: "ü" -> "u", so "drumen" finds "The Drümen".
 // GUARD: a search utility must never be able to crash the page —

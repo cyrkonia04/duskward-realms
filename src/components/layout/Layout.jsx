@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-import Navbar from './Navbar';
-import SecondaryNav from './SecondaryNav';
-import Footer from './Footer';
-import { useRegion } from '../context/RegionContext';
+import Navbar from '@/components/layout/Navbar';
+import SecondaryNav from '@/components/layout/SecondaryNav';
+import Footer from '@/components/layout/Footer';
+import { useRegion } from '@/context/RegionContext';
 
 const regionLabels = {
   '': 'Home',

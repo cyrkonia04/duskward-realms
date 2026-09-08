@@ -1,8 +1,8 @@
 import { useParams, Link } from 'react-router-dom';
-import PageHeader from '../components/PageHeader';
-import { getPeopleBySlug } from '../data/peoples';
-import Breadcrumb from '../components/Breadcrumb';
-import { LinkedText } from '../components/WikiLink';
+import PageHeader from '@/components/ui/PageHeader';
+import { getPeopleBySlug } from '@/data/world/peoples';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import { LinkedText } from '@/components/ui/WikiLink';
 
 export default function RaceDetail() {
   const { raceSlug } = useParams();

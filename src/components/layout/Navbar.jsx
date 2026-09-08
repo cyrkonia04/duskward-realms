@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import NavbarSearch from './NavbarSearch';
+import NavbarSearch from '@/components/layout/NavbarSearch';
 
 const navLinks = [
   { name: 'Home', path: '/' },

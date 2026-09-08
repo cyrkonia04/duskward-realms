@@ -1,9 +1,9 @@
-import PageHeader from '../components/PageHeader';
-import SectionHeading from '../components/SectionHeading';
-import LoreTable from '../components/LoreTable';
-import WikiLink from '../components/WikiLink';
-import { peoplesCategories } from '../data/peoples';
-import { magicLede, magicSources, magicPractices, unbreakableRules } from '../data/magic';
+import PageHeader from '@/components/ui/PageHeader';
+import SectionHeading from '@/components/ui/SectionHeading';
+import LoreTable from '@/components/ui/LoreTable';
+import WikiLink from '@/components/ui/WikiLink';
+import { peoplesCategories } from '@/data/world/peoples';
+import { magicLede, magicSources, magicPractices, unbreakableRules } from '@/data/world/magic';
 import { Link } from 'react-router-dom';
 
 const sectionLinks = [

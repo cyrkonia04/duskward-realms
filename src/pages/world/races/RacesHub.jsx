@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import PageHeader from '../components/PageHeader';
-import Breadcrumb from '../components/Breadcrumb';
-import { peoplesCategories } from '../data/peoples';
+import PageHeader from '@/components/ui/PageHeader';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import { peoplesCategories } from '@/data/world/peoples';
 
 export default function RacesHub() {
   const indexable = peoplesCategories.filter((c) => c.peoples);

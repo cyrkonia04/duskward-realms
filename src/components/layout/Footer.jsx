@@ -1,4 +1,4 @@
-import { useRegion } from '../context/RegionContext';
+import { useRegion } from '@/context/RegionContext';
 
 export default function Footer() {
   const { activeRegion } = useRegion();

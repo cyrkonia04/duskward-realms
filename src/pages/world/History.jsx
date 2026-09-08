@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import PageHeader from '../components/PageHeader';
-import Breadcrumb from '../components/Breadcrumb';
-import { eras } from '../data/history';
+import PageHeader from '@/components/ui/PageHeader';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import { eras } from '@/data/world/history';
 
 export default function History() {
   return (
