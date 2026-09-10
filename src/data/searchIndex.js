@@ -12,6 +12,7 @@ export const searchIndex = [
   { name: 'The Peoples', hint: 'Index', to: '/world/races' },
   { name: 'The Regions', hint: 'Page · Map coming soon', to: '/regions' },
   { name: 'Bestiary', hint: 'Page · Coming soon', to: '/bestiary' },
+  { name: 'Recent Discoveries', hint: 'Chronicle', to: '/discoveries' },
   ...allPeoples.flatMap((p) => [
     { name: p.name, hint: p.categoryTitle, to: `/world/races/${p.slug}` },
     ...(p.subraces ?? []).map((s) => ({

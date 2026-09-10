@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import useFetch from '@/hooks/useFetch';
+import { formatDate } from '@/utils/formatDate';
 
 const exploreData = [
   { name: 'Valerium', path: '/regions', desc: 'Flooded streets, gilded armor, and empty forums.' },
@@ -8,6 +10,10 @@ const exploreData = [
 ];
 
 export default function Home() {
+  // DATA FETCHING: status is 'loading' | 'success' | 'error'
+  const { status, data } = useFetch('/data/changelog.json');
+  const recentEntries = (data?.entries ?? []).slice(0, 5);
+
   return (
     <div className="pt-4 sm:pt-8">
        <h1 className="text-[2.1rem] sm:text-4xl md:text-5xl text-balance text-center mb-6 leading-tight w-full">
@@ -44,13 +50,63 @@ export default function Home() {
         ))}
       </div>
 
-      {/* CHANGELOG BOX */}
+      {/* RECENT DISCOVERIES — live from /data/changelog.json */}
       <div className="relative z-20 max-w-4xl mx-auto px-4 mt-8">
-        <div className="border border-dashed border-gothic-gold/30 rounded-lg p-5">
-          <h3 className="font-heading text-gothic-gold text-sm mb-2 tracking-widest uppercase">Recent Discoveries</h3>
-          <p className="text-gothic-parchment/60 text-xs font-body italic">
-            [Placeholder: Newest lore entry will be added here automatically soon.]
-          </p>
+        <div className="border border-gothic-gold/30 rounded-lg p-5">
+          <div className="flex items-baseline justify-between mb-4 gap-4">
+            <h3 className="font-heading text-gothic-gold text-sm tracking-widest uppercase">
+              Recent Discoveries
+            </h3>
+            <Link
+              to="/discoveries"
+              className="font-body text-xs text-gothic-bronze hover:text-gothic-gold transition-colors whitespace-nowrap"
+            >
+              Full chronicle →
+            </Link>
+          </div>
+
+          {status === 'loading' && (
+            <p className="font-body italic text-gothic-parchment/50 text-xs">
+              Consulting the archives
+              <span className="animate-blink text-gothic-gold/60" aria-hidden="true">▊</span>
+            </p>
+          )}
+
+          {status === 'error' && (
+            <p className="font-body italic text-gothic-parchment/50 text-xs">
+              The archive is unreachable — the mists have taken it.
+            </p>
+          )}
+
+          {status === 'success' && (
+            <ul>
+              {recentEntries.map((entry, i) => (
+                <li key={entry.id} className={i > 0 ? 'pt-3' : ''}>
+                  {i > 0 && (
+                    <div className="flex items-center gap-2 mb-3" aria-hidden="true">
+                      <span className="flex-1 border-t border-gothic-gold/15" />
+                      <span className="text-gothic-gold/40 text-[8px] leading-none">✦</span>
+                      <span className="flex-1 border-t border-gothic-gold/15" />
+                    </div>
+                  )}
+                  <div className="flex gap-4">
+                    <time
+                      dateTime={entry.date}
+                      className="font-mono text-[11px] text-gothic-bronze/80 pt-0.5 shrink-0"
+                    >
+                      {formatDate(entry.date)}
+                    </time>
+                    <div>
+                      <p className="font-heading text-gothic-gold text-sm">{entry.title}</p>
+                      <p className="font-body text-gothic-parchment/60 text-xs leading-relaxed mt-0.5">
+                        {entry.summary}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </div>

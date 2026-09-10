@@ -67,6 +67,14 @@ const titles = {
         ref={mistRef}
         className="fixed -z-20 -top-48 left-0 h-[calc(100lvh_+_24rem)] w-full bg-mist bg-cover bg-center bg-no-repeat opacity-30 will-change-transform"
       />
+      {/* PAPER GRAIN — generated noise, not a photo (see .grain in index.css).
+          TUNING: invisible? -> opacity-[0.10]. Site feels lighter/foggy? ->
+          add mix-blend-soft-light, or drop opacity. Specks too fine/coarse?
+          -> baseFrequency 1.1 / 0.6 in the .grain rule. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-[60] grain opacity-[0.01]"
+      />
 
       <Navbar />
 

@@ -1,0 +1,58 @@
+{
+  "entries": [
+    {
+      "id": "2026-09-08-chronicle",
+      "date": "2026-09-08",
+      "type": "feature",
+      "title": "The archive gains a chronicle",
+      "summary": "The site now records its own growth. Every addition, revision, and repair will be entered here, newest first."
+    },
+    {
+      "id": "2026-09-07-peoples",
+      "date": "2026-09-07",
+      "type": "chapter",
+      "title": "The Peoples index opened",
+      "summary": "Ten peoples across five categories, each with its own page.",
+      "links": [{ "label": "The Peoples", "to": "/world/races" }]
+    },
+    {
+      "id": "2026-09-07-history",
+      "date": "2026-09-07",
+      "type": "chapter",
+      "title": "History of the Realms raised",
+      "summary": "The timeline spine now stands: the Great Wounding, the Long Fade, and the eras every story is measured against.",
+      "links": [{ "label": "History", "to": "/world/history" }]
+    },
+    {
+      "id": "2026-09-07-search",
+      "date": "2026-09-07",
+      "type": "feature",
+      "title": "Search woven into the navbar",
+      "summary": "Fuzzy search across every page, forgiving of missing umlauts and half-remembered names."
+    },
+    {
+      "id": "2026-09-07-magic",
+      "date": "2026-09-07",
+      "type": "chapter",
+      "title": "The Nature of Magic sealed",
+      "summary": "Three sources, three practices, and the four rules that no weaver has ever broken twice.",
+      "links": [{ "label": "Magic", "to": "/world/magic" }]
+    },
+    {
+      "id": "2026-09-06-mist",
+      "date": "2026-09-06",
+      "type": "revision",
+      "title": "The mist learned to drift",
+      "summary": "The background now parallaxes gently as you walk, and no longer snaps when the browser's own chrome shifts.",
+      "links": [{ "label": "Return to the fire", "to": "/" }]
+    },
+    {
+      "id": "2026-09-05-founding",
+      "date": "2026-09-05",
+      "type": "milestone",
+      "title": "Foundation laid",
+      "summary": "The first page of the Duskward Realms opens its doors.",
+      "links": [{ "label": "Home", "to": "/" }]
+    }
+  ]
+}

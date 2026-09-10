@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useRegion } from '@/context/RegionContext';
 
 export default function Footer() {
@@ -12,10 +13,19 @@ export default function Footer() {
     <footer className="relative z-10 border-t border-gothic-gold/20 mt-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
         <p className="font-body italic text-gothic-gold/70 text-sm">
-          "{dynamicText}"
+          “{dynamicText}”
         </p>
         <p className="font-body text-gothic-parchment/50 text-xs mt-2">
           Last updated: September 2026
+        </p>
+        {/* SECONDARY NAV: meta pages live here; the doors above stay small */}
+        <p className="mt-4">
+          <Link
+            to="/discoveries"
+            className="font-body text-xs text-gothic-bronze/80 hover:text-gothic-gold transition-colors"
+          >
+            Chronicle of Discoveries
+          </Link>
         </p>
         <p className="font-body text-gothic-parchment/30 text-xs mt-4">
           Woven by Cyrko

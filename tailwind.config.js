@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         heading: ['"Playfair Display"', 'serif'],
         body: ['"Lora"', 'serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       colors: {
         gothic: {
@@ -20,6 +21,7 @@ export default {
       },
       backgroundImage: {
         mist: "url('/images/misty-forest.jpg')",
+        'parchment-texture': "url('/images/parchment-texture.jpg')",
       },
     },
   },

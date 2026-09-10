@@ -3,6 +3,7 @@ import ErrorBoundary from '@/components/layout/ErrorBoundary';
 import { RegionProvider } from '@/context/RegionContext';
 import Layout from '@/components/layout/Layout';
 import Home from '@/pages/Home';
+import Discoveries from '@/pages/Discoveries';
 import World from '@/pages/world/World';
 import RacesHub from '@/pages/world/races/RacesHub';
 import RaceDetail from '@/pages/world/races/RaceDetail';
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
+              <Route path="/discoveries" element={<Discoveries />} />
               <Route path="/world" element={<World />} />
               <Route path="/world/races" element={<RacesHub />} />
               <Route path="/world/races/:raceSlug" element={<RaceDetail />} />
