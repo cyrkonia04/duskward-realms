@@ -17,6 +17,10 @@ export default {
           amber: '#8a6e4b',
           bronze: '#b8946a',
           purple: '#4a3b5c',
+          // Light lavender of the Twilight Deeps — readable on the dark
+          // background where `purple` disappears. Use `purple` for large
+          // surfaces, `deeps` for thin lines and small text.
+          deeps: '#a89bc0',
         },
       },
       backgroundImage: {

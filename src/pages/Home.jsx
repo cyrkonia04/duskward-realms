@@ -29,7 +29,7 @@ export default function Home() {
           Within these pages, you'll uncover the secrets of this fading age. You'll walk the flooded streets of Aurelia, where the nobility's gilded armor is spotted with verdigris and their grand orations echo through empty forums. Descend into the mountain forges of the Drümen, where the air smells of hot metal and the rhythmic strike of hammer on anvil is the heartbeat of a people who refuse to break. Then there are the Free Cities, where the salt wind carries the scent of spices, sewage, and the desperate energy of a civilization that has chosen denial over despair.
         </p>
         <p>
-          The story is always growing. New characters, new places, and new secrets will be added as they are discovered. Bookmark this page and check back often. I'd be delighted to have you along for the journey.
+          The archive is always growing. New characters, new places, and new secrets are carried in from the mists, transcribed by the Memory-Wardens of the Ashen Athenaeum, and entered here in their turn. Bookmark this page and check back often. I'd be delighted to have you along for the journey.
         </p>
         <p className="text-gothic-gold/70">
           Thank you for visiting.

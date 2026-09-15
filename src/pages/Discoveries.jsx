@@ -43,11 +43,12 @@ export default function Discoveries() {
 
   return (
     <div className="pt-4 sm:pt-8">
-      <PageHeader title="Recent Discoveries" subtitle="A chronicle of the realms' growth" compact />
+      <PageHeader title="Recent Discoveries" subtitle="The accession log of the Memory-Wardens" compact />
 
       <p className="max-w-2xl mx-auto text-center font-body text-gothic-parchment/85 leading-relaxed mb-10">
-        Every addition, revision, and repair to the archive. The mists part
-        slowly, but they part.
+        Every addition, revision, and repair the Wardens have accepted into
+        the archive's keeping, each one read aloud in the Hall of Whispers
+        before it was entered. The mists part slowly, but they part.
       </p>
 
       {/* THE LEDGER: one solid panel — same shell in every state, so nothing jumps */}

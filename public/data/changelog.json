@@ -1,6 +1,19 @@
 {
   "entries": [
     {
+      "id": "2026-09-15-calendar",
+      "date": "2026-09-15",
+      "type": "chapter",
+      "title": "The wounded almanac opens",
+      "summary": "Seven phases, twenty-eight Naming Days, and the unbound days between them — the Calendar now keeps the world's pulse.",
+      "links": [
+        {
+          "label": "Calendar",
+          "to": "/world/calendar"
+        }
+      ]
+    },
+    {
       "id": "2026-09-08-chronicle",
       "date": "2026-09-08",
       "type": "feature",
@@ -13,7 +26,12 @@
       "type": "chapter",
       "title": "The Peoples index opened",
       "summary": "Ten peoples across five categories, each with its own page.",
-      "links": [{ "label": "The Peoples", "to": "/world/races" }]
+      "links": [
+        {
+          "label": "The Peoples",
+          "to": "/world/races"
+        }
+      ]
     },
     {
       "id": "2026-09-07-history",
@@ -21,7 +39,12 @@
       "type": "chapter",
       "title": "History of the Realms raised",
       "summary": "The timeline spine now stands: the Great Wounding, the Long Fade, and the eras every story is measured against.",
-      "links": [{ "label": "History", "to": "/world/history" }]
+      "links": [
+        {
+          "label": "History",
+          "to": "/world/history"
+        }
+      ]
     },
     {
       "id": "2026-09-07-search",
@@ -36,7 +59,12 @@
       "type": "chapter",
       "title": "The Nature of Magic sealed",
       "summary": "Three sources, three practices, and the four rules that no weaver has ever broken twice.",
-      "links": [{ "label": "Magic", "to": "/world/magic" }]
+      "links": [
+        {
+          "label": "Magic",
+          "to": "/world/magic"
+        }
+      ]
     },
     {
       "id": "2026-09-06-mist",
@@ -44,7 +72,12 @@
       "type": "revision",
       "title": "The mist learned to drift",
       "summary": "The background now parallaxes gently as you walk, and no longer snaps when the browser's own chrome shifts.",
-      "links": [{ "label": "Return to the fire", "to": "/" }]
+      "links": [
+        {
+          "label": "Return to the fire",
+          "to": "/"
+        }
+      ]
     },
     {
       "id": "2026-09-05-founding",
@@ -52,7 +85,12 @@
       "type": "milestone",
       "title": "Foundation laid",
       "summary": "The first page of the Duskward Realms opens its doors.",
-      "links": [{ "label": "Home", "to": "/" }]
+      "links": [
+        {
+          "label": "Home",
+          "to": "/"
+        }
+      ]
     }
   ]
 }

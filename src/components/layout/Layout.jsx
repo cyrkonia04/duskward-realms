@@ -4,6 +4,7 @@ import Navbar from '@/components/layout/Navbar';
 import SecondaryNav from '@/components/layout/SecondaryNav';
 import Footer from '@/components/layout/Footer';
 import { useRegion } from '@/context/RegionContext';
+import { rememberGoodPath } from '@/utils/navMemory';
 
 const regionLabels = {
   '': 'Home',
@@ -35,6 +36,7 @@ const titles = {
   '/world/calendar': 'The Calendar',
   '/regions': 'Regions',
   '/bestiary': 'Bestiary',
+  '/style-lab': 'The Style Lab',
 };
     document.title = titles[location.pathname] ?? (region === 'Home' ? 'Duskward Realms' : `Duskward Realms · ${region}`);
 
@@ -50,11 +52,28 @@ const titles = {
     window.scrollTo(0, 0);
   }, [location.pathname, location.hash, setActiveRegion]);
 
-  // SIDE EFFECT: gentle parallax drift on the mist (mount only)
+  // LAST GOOD PATH: remember every path that renders, for the 404
+  // page's "Return the way you came" (typed or edited URLs blindside
+  // the router; see utils/navMemory.js). NotFound claims its own path
+  // first, so a dead end is never remembered as a good page.
+  useEffect(() => {
+    rememberGoodPath(location.pathname);
+  }, [location.pathname]);
+
+  // SIDE EFFECT: gentle parallax drift on the mist (mount only).
+  // BUG FIX: the mist layer sits 12rem above the viewport (-top-48) and
+  // extends 24rem past its bottom edge, so it can afford exactly 12rem
+  // (192px) of downward drift before its TOP edge would enter the frame.
+  // On long pages scrollY*0.05 eventually exceeds that budget, which is
+  // why the imageless background used to peek in from above. The cap
+  // holds the drift inside the budget; past it the mist simply holds
+  // still, which is invisible at 5% speed.
+  const MIST_DRIFT_CAP = 192; // px — must match -top-48 (12rem)
   useEffect(() => {
     const onScroll = () => {
       if (mistRef.current) {
-        mistRef.current.style.transform = `translateY(${window.scrollY * 0.05}px)`;
+        const drift = Math.min(window.scrollY * 0.05, MIST_DRIFT_CAP);
+        mistRef.current.style.transform = `translateY(${drift}px)`;
       }
     };
     window.addEventListener('scroll', onScroll, { passive: true });

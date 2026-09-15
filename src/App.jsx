@@ -12,6 +12,8 @@ import History from '@/pages/world/History';
 import Calendar from '@/pages/world/Calendar';
 import Regions from '@/pages/regions/Regions';
 import Bestiary from '@/pages/bestiary/Bestiary';
+import NotFound from '@/pages/NotFound';
+import StyleLab from '@/pages/StyleLab';
 
 function App() {
   return (
@@ -30,6 +32,10 @@ function App() {
               <Route path="/world/calendar" element={<Calendar />} />
               <Route path="/regions" element={<Regions />} />
               <Route path="/bestiary" element={<Bestiary />} />
+              {/* WORKSHOP: design-trial page — remove before launch */}
+              <Route path="/style-lab" element={<StyleLab />} />
+              {/* CATCH-ALL: unknown roads end in the mists */}
+              <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
         </BrowserRouter>

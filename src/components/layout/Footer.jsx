@@ -27,6 +27,9 @@ export default function Footer() {
             Chronicle of Discoveries
           </Link>
         </p>
+        <p className="font-body italic text-gothic-parchment/40 text-xs mt-3">
+          Kept by the Memory-Wardens of the Ashen Athenaeum
+        </p>
         <p className="font-body text-gothic-parchment/30 text-xs mt-4">
           Woven by Cyrko
         </p>
