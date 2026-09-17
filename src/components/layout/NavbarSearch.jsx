@@ -18,7 +18,7 @@ function matchScore(query, entry) {
   const at = name.indexOf(q);
   if (at > -1) return 70 - Math.min(at, 40);
 
-  const hay = `${name} ${fold(entry.hint)}`;
+  const hay = `${name} ${fold(entry.hint)} ${fold(entry.keywords ?? '')}`;
   const hi = hay.indexOf(q);
   if (hi > -1) return 50 - Math.min(hi, 30);
 

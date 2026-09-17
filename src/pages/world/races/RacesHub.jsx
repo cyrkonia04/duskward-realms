@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom';
 import PageHeader from '@/components/ui/PageHeader';
 import Breadcrumb from '@/components/ui/Breadcrumb';
-import { peoplesCategories } from '@/data/world/peoples';
+import { peoplesHubCategories } from '@/data/world/peoplesHub';
 
+// THE PEOPLES HUB — its own voice. Cards carry short teasers from
+// peoplesHub.js so the hub never repeats the World overview's recap
+// text. The Cursed & Changed are a category of beings here: the hub
+// keeps their tragedy, the Bestiary keeps their threat record.
 export default function RacesHub() {
-  const indexable = peoplesCategories.filter((c) => c.peoples);
+  const indexable = peoplesHubCategories.filter((c) => c.cards);
 
   return (
     <div className="pt-4 sm:pt-8">
@@ -33,7 +37,7 @@ export default function RacesHub() {
                 href={`#${c.id}`}
                 className="block py-1.5 font-body text-sm text-gothic-parchment/60 hover:text-gothic-gold transition-colors"
               >
-                {c.title} <span className="text-gothic-bronze/70">({c.peoples.length})</span>
+                {c.title} <span className="text-gothic-bronze/70">({c.cards.length})</span>
               </a>
             ))}
           </div>
@@ -41,47 +45,48 @@ export default function RacesHub() {
 
         {/* INDEX: rows, not cards — the "table of contents" signature */}
         <div>
-          {peoplesCategories.map((category) => (
+          {peoplesHubCategories.map((category) => (
             <section key={category.id} id={category.id} className="scroll-mt-28 mb-12">
               <h2 className="font-heading text-gothic-gold text-xl tracking-wide">
                 {category.title}
               </h2>
               <div className="mt-1 mb-2 w-16 border-t border-gothic-gold/30" />
 
-              {category.standalone ? (
-                <p className="font-body text-gothic-parchment/80 leading-relaxed">
-                  {category.standalone}
-                  <span className="block mt-2 text-sm italic text-gothic-parchment/50">
-                    (Individual entries for the cursed will be woven in time.)
-                  </span>
-                </p>
-              ) : (
+              {category.cards ? (
                 <div>
-                  {category.peoples.map((people) => (
+                  {category.cards.map((card) => (
                     <Link
-                      key={people.slug}
-                      to={`/world/races/${people.slug}`}
+                      key={card.name}
+                      to={card.to}
                       className="group block py-4 border-b border-dashed border-gothic-gold/20 hover:bg-gothic-parchment/5 px-2 -mx-2 transition-colors"
                     >
                       <div className="flex items-baseline justify-between gap-4">
                         <h3 className="font-heading text-lg text-gothic-gold group-hover:text-gothic-gold">
-                          {people.name}
+                          {card.name}
                         </h3>
                         <span className="font-body text-sm text-gothic-bronze opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                           Read →
                         </span>
                       </div>
-                      <p className="font-body text-sm text-gothic-parchment/60 leading-relaxed mt-1 line-clamp-2">
-                        {people.description}
+                      <p className="font-body text-sm text-gothic-parchment/60 leading-relaxed mt-1">
+                        {card.teaser}
                       </p>
-                      {people.subraces && (
-                        <p className="font-body text-xs text-gothic-bronze/90 mt-1.5">
-                          Includes: {people.subraces.map((s) => s.name).join(' · ')}
-                        </p>
-                      )}
                     </Link>
                   ))}
                 </div>
+              ) : (
+                /* THE CURSED & CHANGED — a category of beings, not a row of
+                   pages yet. The teaser stays here; the threat record lives
+                   in the Bestiary until each cursed kind earns its chapter. */
+                <p className="font-body text-gothic-parchment/80 leading-relaxed">
+                  {category.teaser}
+                  <Link
+                    to={category.to}
+                    className="block mt-2 text-sm text-gothic-bronze hover:text-gothic-gold transition-colors"
+                  >
+                    {category.linkLabel} →
+                  </Link>
+                </p>
               )}
             </section>
           ))}

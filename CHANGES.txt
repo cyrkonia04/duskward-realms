@@ -1,0 +1,80 @@
+DUSKWARD REALMS - UPDATE 6 (2026-09-17)
+=======================================
+
+The tags become a working system, and the records learn to
+rabbit-hole. Extract over your existing duskward-realms folder.
+Nothing to delete; node_modules untouched; no package.json change.
+
+1. THE TAG SIEVE (BestiaryCabinet.jsx)
+   Every entry on every shelf now carries its taxonomy tags - not
+   just the two written records - and each cabinet page opens with a
+   sieve bar: pick any marks (origin, habitat, behavior, threat,
+   rarity, region, folklore) and only the records bearing all of them
+   remain. A live count tells you how much shelf is left
+   ("2 of 6 records"), selected marks light up gold, and one click on
+   "Loosen the sieve" shows everything again. The sieve reads and
+   writes the URL, so a filtered shelf is a link you can share:
+   /bestiary/general?tag=origin:spirit
+
+2. TAGS ARE TUNNELS NOW (BestiaryBeast.jsx + rows)
+   - A record's tag chips link back to that record's cabinet, pre-
+     sieved by that mark. Click threat:moderate on Phookas and you
+     land on the General shelf showing only its fellow moderate.
+   - The chips under every shelf row do the same, toggled in place.
+   - The 18 recordless rows carry provisional tags, drafted by the
+     archive from your own lore (Bestiary.txt) so the sieve works
+     across the whole shelf. They are flagged in bestiary.js as
+     awaiting your veto; when you write a record with its own tags,
+     the row's array is dropped and yours stand alone.
+
+3. RABBIT-HOLE LINKS (RichText.jsx + both records)
+   Bold is now reserved for labels ("Threat Level:") - all decorative
+   bolds are unmarked (goblins, knockers, gremlins, take, relentless,
+   emotions are plain text again). In their place, a new [[...]]
+   marker bolds the name of another entry and leads to its page:
+   - Phookas -> Grimlings, the Gloaming's children (the wound-sites
+     shelf), the Twilight Deeps (the World), the Fey (Peoples),
+     Bogart and Nixies in the cross-references.
+   - Grimlings -> Drumen (Peoples, first mention per section), the
+     Grey Rot (the Wounding), Bogart and the Sighs in the cross-
+     references.
+   Records not yet written (Bogarts, Nixies, the Sighs) stand bold in
+   bronze with a hover note - the tunnel opens the day their record
+   lands under the same slug. The convention is documented in the
+   RichText header.
+
+4. THE AUTHOR'S RULINGS APPLIED
+   - "Threat Level for Hunters:" -> "Threat Level:" (value keeps your
+     hunter-oriented Moderate; the threat tag now reads threat:moderate
+     so tag and body agree).
+   - Grimlings Folklore Origin ends after two paragraphs: the
+     comparison with the real-world originals is gone. The archive
+     does not prove itself the stranger.
+   - Phooka folklore: unchanged, per your standing audit - the Irish
+     puca, the pwca/puck cognates, the black horse, leading travelers
+     astray, and the cream offerings all verify as written.
+
+5. SEARCH + CHRONICLE
+   - searchIndex: all 18 entry rows gain keywords (folk names + their
+     tag ids), so "talisman" finds the Jiang Shi, "hearth" the Bogart;
+     Phookas keywords sync to threat:moderate.
+   - changelog: new entry "2026-09-17-rabbit-holes".
+
+AFTER EXTRACTING
+----------------
+- npm run dev as usual, then hard-refresh (Ctrl+F5).
+- Try the sieve: /bestiary/the-cursed, select behavior:compelled -
+  four of eight remain, and every one of them is driven by something.
+- From the Phookas record, click threat:moderate in the tag strip.
+- Hover a bronze name (Bogart, the Sighs) in a cross-reference.
+
+FILES (8 + this note)
+---------------------
+src/components/ui/RichText.jsx          - [[...]] wiki-link renderer
+src/pages/bestiary/BestiaryCabinet.jsx  - tag sieve + clickable rows
+src/pages/bestiary/BestiaryBeast.jsx    - chips as tunnels
+src/data/world/bestiary.js              - provisional tags, 18 rows
+src/data/world/beasts/grimlings.js      - bold/link convention + cuts
+src/data/world/beasts/phookas.js        - label, tag, links
+src/data/searchIndex.js                 - entry keywords
+public/data/changelog.json              - chronicle entry

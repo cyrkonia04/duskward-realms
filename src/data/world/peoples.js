@@ -112,3 +112,100 @@ export function getPeopleBySlug(slug) {
   );
   return { ...people, categoryTitle: category.title };
 }
+
+// PEOPLES HUB — the index rows, curated separately from the World page.
+// Author decision 16/9: the hub carries its OWN short descriptions, so the
+// same blurb never appears on both pages. `peoplesCategories` (above) still
+// feeds the World page cards and the detail pages; this list feeds only the
+// hub. Entries are hand-picked rather than mapped, which is what lets the
+// two Elemental-Kin subraces stand as their own rows, and lets the Cursed
+// link across to the Bestiary instead of a detail page.
+// NOTE: The Fey and the Spirits entries are collaborator-drafted copy,
+// pending the author's veto, as no hub text was supplied for them.
+export const hubSections = [
+  {
+    id: 'common-folk',
+    title: 'The Common Folk',
+    entries: [
+      {
+        name: 'Humans',
+        to: '/world/races/humans',
+        text: "They live brief lives, and they burn. Their cities rise and fall within a generation. They feel the Grey Rot most acutely, their spirits withering with the world's.",
+      },
+      {
+        name: 'The Drümen',
+        to: '/world/races/drumen',
+        text: "Born of the mountain's soul. Their cities are carved from living rock, and their culture is built on clan loyalty and endurance. They wage a constant, silent war against the Deep-Dwellers.",
+      },
+    ],
+  },
+  {
+    id: 'kin-touched',
+    title: 'The Kin-Touched',
+    entries: [
+      {
+        name: 'Fey-Touched',
+        to: '/world/races/fey-touched',
+        text: 'Mortals with fey blood. They carry alien hearts and a melancholy grace, forever caught between two worlds. Their glamour warps perception around them.',
+      },
+      {
+        name: 'Beast-Kin',
+        to: '/world/races/beast-kin',
+        text: 'They walk the line between civilization and the wild. Animal features, heightened senses, and primal instincts make them invaluable scouts and hunters.',
+      },
+      {
+        name: 'Golem-Kin',
+        to: '/world/races/golem-kin',
+        text: 'Awakened earth. Stone given soul. They are rare, ageless, and deliberate in all things. Their core is their heart and their greatest vulnerability.',
+      },
+    ],
+  },
+  {
+    id: 'rare-and-mythic',
+    title: 'The Rare and Mythic',
+    entries: [
+      {
+        name: 'Ember-Kin',
+        to: '/world/races/elemental-kin',
+        text: 'Caged wildfire. Passion given form. They burn bright and fast, their existence a constant struggle against their own nature.',
+      },
+      {
+        name: 'Mist-Kin',
+        to: '/world/races/elemental-kin',
+        text: 'Captured breath. Ephemeral and changeable. They are the solid ghost of a process, forever longing to return to their flow.',
+      },
+      {
+        name: 'Dragon-Kin',
+        to: '/world/races/dragon-kin',
+        text: 'Echoes of a forgotten age. Scaled and proud, they carry the blood of the great dragons and the weight of a legacy they can never fully bear.',
+      },
+    ],
+  },
+  {
+    id: 'cursed-and-changed',
+    title: 'The Cursed & Changed',
+    entries: [
+      {
+        name: 'Cursed Beings',
+        to: '/bestiary',
+        text: 'Broken narratives. Changed against their will. They are walking tragedies, their nature rewritten by magic, pact, or calamity.',
+      },
+    ],
+  },
+  {
+    id: 'true-others',
+    title: 'The True Others',
+    entries: [
+      {
+        name: 'The Fey',
+        to: '/world/races/the-fey',
+        text: 'The Gentry of the Twilight Deeps. Not people, but stories that walk. They cannot break their word, and they always keep it in the way that wounds.',
+      },
+      {
+        name: 'Spirits & True Elementals',
+        to: '/world/races/spirits-true-elementals',
+        text: "The world's own consciousness: River-Mothers, Fire-Husks, Boreals. Powers of place, tied to their domain as mortals are to a heartbeat. Propitiation, not conversation.",
+      },
+    ],
+  },
+];

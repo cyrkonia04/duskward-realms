@@ -1,6 +1,79 @@
 {
   "entries": [
     {
+      "id": "2026-09-17-rabbit-holes",
+      "date": "2026-09-17",
+      "type": "feature",
+      "title": "The archive learns to rabbit-hole",
+      "summary": "Every entry on the shelves now carries its marks, and each cabinet gains a sieve: choose any marks and only the records that bear them remain. Within the records, the names of other entries stand bold and lead onward — to records already written, and, bold in bronze, to the ones still unwritten.",
+      "links": [
+        {
+          "label": "General Bestiary",
+          "to": "/bestiary/general"
+        },
+        {
+          "label": "Phookas",
+          "to": "/bestiary/general/phookas"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-17-phookas",
+      "date": "2026-09-17",
+      "type": "chapter",
+      "title": "The Phookas take the record",
+      "summary": "The second full record is written: a shapeshifting fey of chaos and crossroads, dangerous the way a prank can be dangerous. Its pages link to the Grimlings, and the Grimlings back to it, so the archive begins to weave itself into rabbit-holes. The Grimlings' own record is corrected in passing: their folklore strands are given their true ages, and the miners pay their Knockers in bread, not iron.",
+      "links": [
+        {
+          "label": "Phookas",
+          "to": "/bestiary/general/phookas"
+        },
+        {
+          "label": "Grimlings",
+          "to": "/bestiary/general/grimlings"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-15-grimlings",
+      "date": "2026-09-15",
+      "type": "chapter",
+      "title": "The first record is written: Grimlings",
+      "summary": "Tier three of the Bestiary opens. The Grimlings record arrives in full — nature, habits, weaknesses, variants — and every beast now carries the new tag taxonomy, woven into search for ready reference.",
+      "links": [
+        {
+          "label": "Grimlings",
+          "to": "/bestiary/general/grimlings"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-15-bestiary",
+      "date": "2026-09-15",
+      "type": "chapter",
+      "title": "The Bestiary opens its cabinets",
+      "summary": "Three cabinets of the world's hungry things, each leading to its own hall of records: the folklore that remained understood, the horrors that fester in the wounds, and the cursed. Full records for each creature will follow. Spirits and true elementals keep their own record among the Peoples.",
+      "links": [
+        {
+          "label": "Bestiary",
+          "to": "/bestiary"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-15-peoples-voices",
+      "date": "2026-09-15",
+      "type": "revision",
+      "title": "The Peoples index finds its voice",
+      "summary": "Every people of the hub now greets you in its own words instead of the World's. The Cursed & Changed are introduced as a category of beings and handed to the Bestiary for their kinds and weaknesses.",
+      "links": [
+        {
+          "label": "The Peoples",
+          "to": "/world/races"
+        }
+      ]
+    },
+    {
       "id": "2026-09-15-calendar",
       "date": "2026-09-15",
       "type": "chapter",

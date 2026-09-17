@@ -12,6 +12,8 @@ import History from '@/pages/world/History';
 import Calendar from '@/pages/world/Calendar';
 import Regions from '@/pages/regions/Regions';
 import Bestiary from '@/pages/bestiary/Bestiary';
+import BestiaryCabinet from '@/pages/bestiary/BestiaryCabinet';
+import BestiaryBeast from '@/pages/bestiary/BestiaryBeast';
 import NotFound from '@/pages/NotFound';
 import StyleLab from '@/pages/StyleLab';
 
@@ -32,6 +34,10 @@ function App() {
               <Route path="/world/calendar" element={<Calendar />} />
               <Route path="/regions" element={<Regions />} />
               <Route path="/bestiary" element={<Bestiary />} />
+              {/* TIER TWO: each cabinet is a hub of its own category */}
+              <Route path="/bestiary/:cabinetId" element={<BestiaryCabinet />} />
+              {/* TIER THREE: each creature's full record page */}
+              <Route path="/bestiary/:cabinetId/:beastSlug" element={<BestiaryBeast />} />
               {/* WORKSHOP: design-trial page — remove before launch */}
               <Route path="/style-lab" element={<StyleLab />} />
               {/* CATCH-ALL: unknown roads end in the mists */}
