@@ -7,8 +7,9 @@
 
 import grimlings from './grimlings';
 import phookas from './phookas';
+import nixalka from './nixalka';
 
-export const beasts = [grimlings, phookas];
+export const beasts = [grimlings, phookas, nixalka];
 
 // KEY: 'cabinet/slug' — mirrors the route /bestiary/:cabinetId/:beastSlug
 export const beastByRoute = Object.fromEntries(

@@ -17,8 +17,8 @@
 //        the record at /bestiary/<cabinet>/<slug>.
 //   A slug whose record is not written yet stays bold (in the link's
 //   bronze) with no link: the rabbit hole is dug, the tunnel opens
-//   the day the record lands. Planned slugs so far: bogarts, nixies,
-//   sighs, drowners, reflectors, blight-sworn.
+//   the day the record lands. Planned slugs so far: bogarts, sighs,
+//   drowners, reflectors, blight-sworn.
 // - Self-references never link; an entry does not rabbit-hole into
 //   itself.
 

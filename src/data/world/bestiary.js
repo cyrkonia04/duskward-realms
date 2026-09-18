@@ -12,12 +12,6 @@
 // author's veto). A record's own tags always take precedence; when a
 // record lands, drop the row's array so the authored tags stand alone.
 //
-// TAGS: rows without a written record carry a provisional `tags`
-// array, drafted by the archive from the author's lore so the
-// cabinet's tag sieve works across the whole shelf (awaiting the
-// author's veto). A record's own tags always take precedence; when a
-// record lands, drop the row's array so the authored tags stand alone.
-//
 // Overview copy is the author's, verbatim. Spirits and True
 // Elementals are deliberately NOT catalogued here; their record lives
 // among the Peoples.
@@ -48,7 +42,7 @@ export const rotInfluence = {
 export const bestiaryNature = {
   id: 'nature',
   title: 'The Nature of the Bestiary',
-  text: 'This bestiary catalogs the most common and significant beings encountered by travelers in the Duskward Realms. It is not exhaustive. The world is vast, and its shadows are deep. Some creatures are so rare that they have no names, only whispered descriptions passed between frightened survivors. Others are so common that they are taken for granted: the Grimlings in the walls, the Bogarts in the hearth, the Nixies in the river.',
+  text: 'This bestiary catalogs the most common and significant beings encountered by travelers in the Duskward Realms. It is not exhaustive. The world is vast, and its shadows are deep. Some creatures are so rare that they have no names, only whispered descriptions passed between frightened survivors. Others are so common that they are taken for granted: the Grimlings in the walls, the Bogarts in the hearth, the Nixalka in the river.',
 };
 
 export const cabinets = [
@@ -66,10 +60,10 @@ export const cabinets = [
       },
       {
         name: 'Phookas',
-        knownAs: 'Púcas · Puck · Shape-shifters',
+        knownAs: 'Púcas · Puck · Shape-shifters · Story-Things',
         page: 'phookas',
         whisper:
-          'A trickster fey of wilderness, crossroads, and liminal spaces, amoral rather than evil. It leads travelers astray for amusement and is best met with offerings of cream or honey, riddles, or a story well told.',
+          'A story that leaked from the Twilight Deeps and cannot end until it is told. It casts travelers in the roles its tale demands; riddles, cream, or a story well told may buy you a better part.',
       },
       {
         name: 'The Bogart',
@@ -84,54 +78,18 @@ export const cabinets = [
           'region:universal',
           'folklore:germanic',
         ],
-        tags: [
-          'origin:spirit',
-          'habitat:domestic',
-          'behavior:mirror',
-          'behavior:guardian',
-          'threat:low',
-          'rarity:uncommon',
-          'region:universal',
-          'folklore:germanic',
-        ],
         whisper:
           'A spirit of the hearth that mirrors the home it keeps. Respect it and it mends, guards, and guides; offend it and it sours milk, steals, and breeds dread. It cannot be killed, only appeased or driven out.',
       },
       {
-        name: 'Nixies',
-        knownAs: 'Nixes · Water-Wraiths · River-Singers',
-        tags: [
-          'origin:spirit',
-          'habitat:water',
-          'behavior:predator',
-          'threat:high',
-          'rarity:uncommon',
-          'region:universal',
-          'folklore:germanic',
-        ],
-        tags: [
-          'origin:spirit',
-          'habitat:water',
-          'behavior:predator',
-          'threat:high',
-          'rarity:uncommon',
-          'region:universal',
-          'folklore:germanic',
-        ],
+        name: 'Nixalka',
+        knownAs: 'Nixas · Water-Singers · Drowned Brides',
+        page: 'nixalka',
         whisper:
-          "Beautiful singers of fresh water, possessive of their rivers and lethal in their loneliness. Their song lures the unwary to the water's edge, and their illusions make drowning look like a safe path.",
+          "The water's memory of a death, wearing the drowned like a mask. Its song lures the unwary to the water's edge, its illusions make a deadly pool look like solid ground, and its love is always fatal.",
       },
       {
         name: 'The Fey',
-        tags: [
-          'origin:fey',
-          'habitat:thin-place',
-          'behavior:indifferent',
-          'threat:high',
-          'rarity:uncommon',
-          'region:twilight-deeps',
-          'folklore:original',
-        ],
         tags: [
           'origin:fey',
           'habitat:thin-place',
@@ -149,15 +107,6 @@ export const cabinets = [
       {
         name: 'The Old Gods',
         knownAs: 'The Forgotten · The Root-Kings',
-        tags: [
-          'origin:forgotten',
-          'habitat:wilderness',
-          'behavior:indifferent',
-          'threat:moderate',
-          'rarity:unique',
-          'region:universal',
-          'folklore:original',
-        ],
         tags: [
           'origin:forgotten',
           'habitat:wilderness',
@@ -192,15 +141,6 @@ export const cabinets = [
           'region:gloaming',
           'folklore:original',
         ],
-        tags: [
-          'origin:wound-born',
-          'habitat:gloaming',
-          'behavior:corruptor',
-          'threat:extreme',
-          'rarity:unique',
-          'region:gloaming',
-          'folklore:original',
-        ],
         whisper:
           'An expanding wound of despair that behaves like a region: mist, marsh, and malice. Its children are filed below; its full record waits with the Regions.',
         to: '/regions',
@@ -209,15 +149,6 @@ export const cabinets = [
       {
         name: 'The Sighs',
         site: 'Festering in: the Gloaming',
-        tags: [
-          'origin:wound-born',
-          'habitat:gloaming',
-          'behavior:parasite',
-          'threat:high',
-          'rarity:unique',
-          'region:gloaming',
-          'folklore:original',
-        ],
         tags: [
           'origin:wound-born',
           'habitat:gloaming',
@@ -243,31 +174,12 @@ export const cabinets = [
           'region:gloaming',
           'folklore:original',
         ],
-        tags: [
-          'origin:wound-born',
-          'habitat:gloaming',
-          'habitat:water',
-          'behavior:compelled',
-          'threat:high',
-          'rarity:common',
-          'region:gloaming',
-          'folklore:original',
-        ],
         whisper:
           "The re-animated dead of the marsh, gliding rather than shambling. They feel no hunger, only a compulsion to add your voice to the Gloaming's chorus.",
       },
       {
         name: 'The Reflectors',
         site: 'Festering in: the Gloaming',
-        tags: [
-          'origin:wound-born',
-          'habitat:gloaming',
-          'behavior:mirror',
-          'threat:high',
-          'rarity:uncommon',
-          'region:gloaming',
-          'folklore:original',
-        ],
         tags: [
           'origin:wound-born',
           'habitat:gloaming',
@@ -292,30 +204,12 @@ export const cabinets = [
           'region:gloaming',
           'folklore:original',
         ],
-        tags: [
-          'origin:wound-born',
-          'habitat:gloaming',
-          'behavior:corruptor',
-          'threat:moderate',
-          'rarity:common',
-          'region:gloaming',
-          'folklore:original',
-        ],
         whisper:
           "The Gloaming's commonest horrors: insects and amphibians twisted fundamentally wrong. Giant dragonflies wearing patterns of screaming faces; frogs with human eyes that blink in unison.",
       },
       {
         name: 'The Deep Dwellers',
         site: 'Festering in: the deep-ways',
-        tags: [
-          'origin:wound-born',
-          'habitat:underground',
-          'behavior:predator',
-          'threat:extreme',
-          'rarity:rare',
-          'region:universal',
-          'folklore:original',
-        ],
         tags: [
           'origin:wound-born',
           'habitat:underground',
@@ -346,29 +240,11 @@ export const cabinets = [
           'region:universal',
           'folklore:germanic',
         ],
-        tags: [
-          'origin:cursed',
-          'habitat:wilderness',
-          'behavior:predator',
-          'threat:high',
-          'rarity:uncommon',
-          'region:universal',
-          'folklore:germanic',
-        ],
         whisper:
           'A permanent, unstable hybrid of human and beast, ruled by the ebb of instinct rather than the phases of the moon. Silver harms them; discipline, meditation, and a loyal pack can sometimes steady them.',
       },
       {
         name: 'Vampyres',
-        tags: [
-          'origin:cursed',
-          'habitat:domestic',
-          'behavior:predator',
-          'threat:high',
-          'rarity:rare',
-          'region:universal',
-          'folklore:slavic',
-        ],
         tags: [
           'origin:cursed',
           'habitat:domestic',
@@ -392,15 +268,6 @@ export const cabinets = [
           'region:universal',
           'folklore:asian',
         ],
-        tags: [
-          'origin:cursed',
-          'habitat:ruins',
-          'behavior:compelled',
-          'threat:high',
-          'rarity:rare',
-          'region:universal',
-          'folklore:asian',
-        ],
         whisper:
           'Spirits bound to their own decaying bodies by injustice or improper burial, driven by one obsessive purpose. Paper talismans, certain prayers, and their true name spoken with authority hold power over them.',
       },
@@ -415,29 +282,11 @@ export const cabinets = [
           'region:universal',
           'folklore:amerindian',
         ],
-        tags: [
-          'origin:cursed',
-          'habitat:wilderness',
-          'behavior:predator',
-          'threat:extreme',
-          'rarity:rare',
-          'region:universal',
-          'folklore:amerindian',
-        ],
         whisper:
           'Born of starvation and cannibalism in the deep wilds: emaciated, forever freezing, forever hungry. Fire and iron harm it, and acts of profound generosity can sometimes break the curse.',
       },
       {
         name: 'The Grey Rot Twisted',
-        tags: [
-          'origin:cursed',
-          'habitat:ruins',
-          'behavior:compelled',
-          'threat:high',
-          'rarity:rare',
-          'region:universal',
-          'folklore:original',
-        ],
         tags: [
           'origin:cursed',
           'habitat:ruins',
@@ -462,16 +311,6 @@ export const cabinets = [
           'region:gloaming',
           'folklore:original',
         ],
-        tags: [
-          'origin:cursed',
-          'habitat:gloaming',
-          'habitat:thin-place',
-          'behavior:compelled',
-          'threat:low',
-          'rarity:rare',
-          'region:gloaming',
-          'folklore:original',
-        ],
         whisper:
           'Survivors of the Gloaming who were not fully consumed, now partially made of its substance. They fight to remain themselves, and can never escape the wound that made them.',
       },
@@ -486,28 +325,11 @@ export const cabinets = [
           'region:universal',
           'folklore:original',
         ],
-        tags: [
-          'origin:cursed',
-          'behavior:compelled',
-          'threat:moderate',
-          'rarity:uncommon',
-          'region:universal',
-          'folklore:original',
-        ],
         whisper:
           'Those who traded a piece of themselves for power, longevity, or salvation, and paid more than anticipated. Their weakness is the terms of the pact; their tragedy is that breaking it is rarely simple.',
       },
       {
         name: 'The Consumed',
-        tags: [
-          'origin:cursed',
-          'habitat:ruins',
-          'behavior:compelled',
-          'threat:low',
-          'rarity:rare',
-          'region:universal',
-          'folklore:original',
-        ],
         tags: [
           'origin:cursed',
           'habitat:ruins',

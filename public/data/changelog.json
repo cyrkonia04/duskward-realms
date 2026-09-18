@@ -1,6 +1,23 @@
 {
   "entries": [
     {
+      "id": "2026-09-18-nixalka",
+      "date": "2026-09-18",
+      "type": "chapter",
+      "title": "The Nixalka surface; the Phookas are remade",
+      "summary": "The third full record is written: the Nixalka, the water's memory of a drowning, lonely past all sense, whose love is always fatal. They take the shelf seat the Nixies held, and their root is set down truly in Slavic story. In the same stroke the Phookas are remade: no longer mere tricksters, they are stories that leaked into the world and cannot end until they are told — and a story needs other people to happen to.",
+      "links": [
+        {
+          "label": "Nixalka",
+          "to": "/bestiary/general/nixalka"
+        },
+        {
+          "label": "Phookas",
+          "to": "/bestiary/general/phookas"
+        }
+      ]
+    },
+    {
       "id": "2026-09-17-rabbit-holes",
       "date": "2026-09-17",
       "type": "feature",

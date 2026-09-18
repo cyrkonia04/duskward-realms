@@ -1,80 +1,76 @@
-DUSKWARD REALMS - UPDATE 6 (2026-09-17)
+DUSKWARD REALMS - UPDATE 7 (2026-09-18)
 =======================================
 
-The tags become a working system, and the records learn to
-rabbit-hole. Extract over your existing duskward-realms folder.
-Nothing to delete; node_modules untouched; no package.json change.
+The Nixalka surface, and the Phookas are remade. Extract over your
+existing duskward-realms folder. Nothing to delete; node_modules
+untouched; no package.json change. This package is cumulative: it
+carries update-6's files too, so it brings any tree current on its own.
 
-1. THE TAG SIEVE (BestiaryCabinet.jsx)
-   Every entry on every shelf now carries its taxonomy tags - not
-   just the two written records - and each cabinet page opens with a
-   sieve bar: pick any marks (origin, habitat, behavior, threat,
-   rarity, region, folklore) and only the records bearing all of them
-   remain. A live count tells you how much shelf is left
-   ("2 of 6 records"), selected marks light up gold, and one click on
-   "Loosen the sieve" shows everything again. The sieve reads and
-   writes the URL, so a filtered shelf is a link you can share:
-   /bestiary/general?tag=origin:spirit
+1. THE NIXALKA (new record, /bestiary/general/nixalka)
+   The third full record, your text verbatim. They take the shelf
+   seat the provisional Nixies row held: the folkloric root moves
+   from the Germanic nix to the Slavic rusalka (verified - the
+   unsettled soul of a woman drowned unjustly, luring the living
+   after her), and the creature is reborn wound-born: the water's
+   memory of a drowning, wearing the drowned like a mask. Two
+   variants (The Deep Ones, The Song-Wrought), the full encounter,
+   and cross-references to the Phookas and to the River-Mothers.
+   Tags as you listed them: origin:wound-born, behavior:predator,
+   habitat:water, threat:high, rarity:uncommon, folklore:slavic -
+   the shelf row carries none of its own now; yours stand alone.
 
-2. TAGS ARE TUNNELS NOW (BestiaryBeast.jsx + rows)
-   - A record's tag chips link back to that record's cabinet, pre-
-     sieved by that mark. Click threat:moderate on Phookas and you
-     land on the General shelf showing only its fellow moderate.
-   - The chips under every shelf row do the same, toggled in place.
-   - The 18 recordless rows carry provisional tags, drafted by the
-     archive from your own lore (Bestiary.txt) so the sieve works
-     across the whole shelf. They are flagged in bestiary.js as
-     awaiting your veto; when you write a record with its own tags,
-     the row's array is dropped and yours stand alone.
+2. THE PHOOKAS REMADE (/bestiary/general/phookas)
+   Narrative fragments: stories that leaked from the Twilight Deeps,
+   plots that demand to be completed, casting travelers in the roles
+   their tale requires. Folklore Origin, Physical Description,
+   Habitat and the encounter carry over; Nature, Abilities
+   (Narrative Compulsion), Weaknesses (Narrative Disruption) and the
+   Threat Level module are your new text. The four tale-shapes (The
+   Broken Tale, The Endless Tale, The Borrowed Tale, The Story-Eater)
+   replace The Puck, The Bogie and The Shape-Eater, and the Puck
+   search entry retires with them. One announced repair: "stories,it
+   consumes" gains its missing space.
 
-3. RABBIT-HOLE LINKS (RichText.jsx + both records)
-   Bold is now reserved for labels ("Threat Level:") - all decorative
-   bolds are unmarked (goblins, knockers, gremlins, take, relentless,
-   emotions are plain text again). In their place, a new [[...]]
-   marker bolds the name of another entry and leads to its page:
-   - Phookas -> Grimlings, the Gloaming's children (the wound-sites
-     shelf), the Twilight Deeps (the World), the Fey (Peoples),
-     Bogart and Nixies in the cross-references.
-   - Grimlings -> Drumen (Peoples, first mention per section), the
-     Grey Rot (the Wounding), Bogart and the Sighs in the cross-
-     references.
-   Records not yet written (Bogarts, Nixies, the Sighs) stand bold in
-   bronze with a hover note - the tunnel opens the day their record
-   lands under the same slug. The convention is documented in the
-   RichText header.
+3. SHELF AND SEARCH SYNC
+   - The Nixalka row links to its record; its whisper is the
+     archive's compression of your overview ("The water's memory of
+     a death... its love is always fatal") - veto welcome.
+   - The Phookas row's whisper and knownAs follow the remake
+     (Story-Things added).
+   - The World page's Nature copy now reads "the Nixalka in the
+     river" - a canon name-sync in your verbatim text, flagged.
+   - Search: "rusalka", "nixas", "drowned brides" and even the old
+     "nixies" all find the record; Phookas keywords gain the
+     tale-shapes; changelog entry 2026-09-18-nixalka.
 
-4. THE AUTHOR'S RULINGS APPLIED
-   - "Threat Level for Hunters:" -> "Threat Level:" (value keeps your
-     hunter-oriented Moderate; the threat tag now reads threat:moderate
-     so tag and body agree).
-   - Grimlings Folklore Origin ends after two paragraphs: the
-     comparison with the real-world originals is gone. The archive
-     does not prove itself the stranger.
-   - Phooka folklore: unchanged, per your standing audit - the Irish
-     puca, the pwca/puck cognates, the black horse, leading travelers
-     astray, and the cream offerings all verify as written.
-
-5. SEARCH + CHRONICLE
-   - searchIndex: all 18 entry rows gain keywords (folk names + their
-     tag ids), so "talisman" finds the Jiang Shi, "hearth" the Bogart;
-     Phookas keywords sync to threat:moderate.
-   - changelog: new entry "2026-09-17-rabbit-holes".
+4. HOUSEKEEPING
+   - bestiary.js: the 18 doubled provisional tag arrays and the
+     doubled TAGS header note are collapsed (an update-6 slip -
+     harmless, but untidy). The sieve behaves identically.
+   - RichText header: the planned-slugs note loses "nixies" - that
+     tunnel opened under its true name. Still bronze: Bogarts, the
+     Sighs, the Drowners, the Reflectors, the Blight-Sworn.
+   - The Phookas record's old Grimlings cross-reference is retired by
+     the remake; the Grimlings still point at the Phookas, one-way.
 
 AFTER EXTRACTING
 ----------------
 - npm run dev as usual, then hard-refresh (Ctrl+F5).
-- Try the sieve: /bestiary/the-cursed, select behavior:compelled -
-  four of eight remain, and every one of them is driven by something.
-- From the Phookas record, click threat:moderate in the tag strip.
-- Hover a bronze name (Bogart, the Sighs) in a cross-reference.
+- Read /bestiary/general/nixalka, then click Phookas in its cross-
+  references: the record on the other side is a different creature
+  than the one you last read.
+- On the General shelf, sieve folklore:slavic - one name remains.
+- Search "rusalka".
 
-FILES (8 + this note)
----------------------
-src/components/ui/RichText.jsx          - [[...]] wiki-link renderer
-src/pages/bestiary/BestiaryCabinet.jsx  - tag sieve + clickable rows
-src/pages/bestiary/BestiaryBeast.jsx    - chips as tunnels
-src/data/world/bestiary.js              - provisional tags, 18 rows
-src/data/world/beasts/grimlings.js      - bold/link convention + cuts
-src/data/world/beasts/phookas.js        - label, tag, links
-src/data/searchIndex.js                 - entry keywords
+FILES (10 + this note)
+----------------------
+src/data/world/beasts/nixalka.js        - NEW: the record
+src/data/world/beasts/phookas.js        - the remake
+src/data/world/beasts/index.js          - registry: +nixalka
+src/data/world/bestiary.js              - Nixalka row, whispers, dedupe
+src/data/world/beasts/grimlings.js      - carried from update 6
+src/data/searchIndex.js                 - Nixalka record, keyword sync
+src/components/ui/RichText.jsx          - planned-slugs note
+src/pages/bestiary/BestiaryCabinet.jsx  - carried from update 6
+src/pages/bestiary/BestiaryBeast.jsx    - carried from update 6
 public/data/changelog.json              - chronicle entry
